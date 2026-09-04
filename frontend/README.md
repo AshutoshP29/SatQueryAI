@@ -1,16 +1,154 @@
-# React + Vite
+# SatQueryAI Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+The frontend application for **SatQueryAI**, an interactive vision-language assistant for multimodal remote sensing image analysis.
 
-Currently, two official plugins are available:
+This web interface allows users to upload remote sensing images, enter natural-language queries, and view the analysis results returned by the SatQueryAI backend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+* React
+* Vite
+* JavaScript
+* Tailwind CSS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the Oxlint configuration
+* Interactive satellite image analysis interface
+* Remote sensing image upload
+* Natural-language query input
+* Support for optical and SAR imagery
+* Query processing through the SatQueryAI backend
+* Routing and analysis status visualization
+* AI-generated analysis results
+* Demo mode for testing the interface
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Project Structure
+
+```text
+frontend/
+├── public/
+├── src/
+│   ├── api/
+│   │   └── satqueryApi.js
+│   │
+│   ├── components/
+│   │   ├── BossNode.jsx
+│   │   ├── DemoModeToggle.jsx
+│   │   ├── ErrorBanner.jsx
+│   │   ├── ImageThumbnail.jsx
+│   │   ├── QueryInput.jsx
+│   │   └── ResultPanel.jsx
+│   │
+│   ├── demo/
+│   ├── hooks/
+│   │   └── useSatQuery.js
+│   │
+│   └── lib/
+│
+├── index.html
+├── package.json
+├── package-lock.json
+└── vite.config.js
+```
+
+## Requirements
+
+Make sure the following are installed:
+
+* Node.js
+* npm
+
+You can verify your installation with:
+
+```bash
+node --version
+npm --version
+```
+
+## Installation
+
+From the project root:
+
+```bash
+cd frontend
+```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+## Run the Frontend
+
+Start the Vite development server:
+
+```bash
+npm run dev
+```
+
+The frontend will normally be available at:
+
+```text
+http://localhost:5173
+```
+
+Open this URL in your browser.
+
+## Backend Connection
+
+The frontend communicates with the SatQueryAI backend through the API layer located in:
+
+```text
+src/api/satqueryApi.js
+```
+
+The backend should be running separately when testing features that require real API communication.
+
+## Production Build
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+The build output is generated in:
+
+```text
+dist/
+```
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Development
+
+For development, make changes inside the `src/` directory and restart the development server only if required.
+
+The main UI components are located in:
+
+```text
+src/components/
+```
+
+API communication is handled through:
+
+```text
+src/api/
+```
+
+and application-level query handling is managed through:
+
+```text
+src/hooks/
+```
+
+## Notes
+
+The `node_modules/` and `dist/` directories are generated locally and should not be committed to Git.
+
+The frontend is designed to work as the user-facing interface of the larger SatQueryAI system.
