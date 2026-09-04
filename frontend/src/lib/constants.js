@@ -20,7 +20,7 @@ export const FALLBACK_WORKERS = [
     short_name: "Cross-Modal Worker",
     description:
       "Joint reasoning over a co-registered optical/multispectral and SAR pair, plus question answering on a standalone SAR image.",
-    tuned_on: "BigEarthNet.txt",
+    tuned_on: "BigthNet.txt",
     tasks: ["cross_modal_fusion", "single_vqa"],
     min_images: 1,
     max_images: 2,
